@@ -17,8 +17,32 @@
   </style>
 </head>
 <body>
-  <iframe 
-    src="https://drive.google.com/viewerng/viewer?embedded=true&url=https%3A%2F%2Fdrive.google.com%2Fuc%3Fexport%3Ddownload%26id%3D1DBTlz71O9uil4_ERCRk9DmaTp4WQA3Cs%26v%3D20250215">
-  </iframe>
+
+<script>
+  // Your NEW Google Drive FILE ID
+  const fileId = "1GCqKvlS_8ITY8oFyFDh71dUYLYEsAGb1";
+
+  // Auto cache-buster (current timestamp)
+  const cacheBuster = Date.now();
+
+  // Construct the direct-download URL
+  const directUrl =
+    "https://drive.google.com/uc?export=download&id=" +
+    fileId + "&v=" + cacheBuster;
+
+  // Encode URL for Google Viewer
+  const encodedUrl = encodeURIComponent(directUrl);
+
+  // Final viewer URL
+  const viewerUrl =
+    "https://drive.google.com/viewerng/viewer?embedded=true&url=" +
+    encodedUrl;
+
+  // Insert iframe dynamically
+  document.write(
+    '<iframe src="' + viewerUrl + '"></iframe>'
+  );
+</script>
+
 </body>
 </html>
